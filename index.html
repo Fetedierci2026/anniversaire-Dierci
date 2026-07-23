@@ -1,20 +1,142 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
-<title>Anniversaire de Dierci</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anniversaire de Dierci 🎂</title>
+
+<style>
+
+body{
+
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+
+font-family:Arial,sans-serif;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+margin:0;
+
+}
+
+.carte{
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+text-align:center;
+
+width:350px;
+
+}
+
+h1{
+
+color:#ff4d6d;
+
+}
+
+input{
+
+width:90%;
+
+padding:12px;
+
+font-size:18px;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+margin-top:20px;
+
+}
+
+button{
+
+margin-top:20px;
+
+padding:12px 30px;
+
+font-size:18px;
+
+background:#ff4d6d;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#e6395f;
+
+}
+
+#resultat{
+
+margin-top:30px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#444;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>🎂 Bienvenue à l'anniversaire de Dierci 🎉</h1>
+<div class="carte">
 
-<p>Nous sommes heureux de vous accueillir !</p>
+<h1>🎂 Anniversaire de Dierci 🎉</h1>
 
-<input type="text" placeholder="Entrez votre prénom">
+<p>Entrez votre prénom pour trouver votre place.</p>
 
-<button>Trouver ma place</button>
+<input id="prenom" placeholder="Votre prénom">
+
+<br>
+
+<button onclick="chercher()">
+
+Trouver ma place
+
+</button>
+
+<div id="resultat"></div>
+
+</div>
+
+<script>
+
+function chercher(){
+
+document.getElementById("resultat").innerHTML="🚧 Fonction bientôt disponible";
+
+}
+
+</script>
 
 </body>
 
