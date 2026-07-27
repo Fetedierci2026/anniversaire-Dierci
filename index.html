@@ -157,7 +157,44 @@ transform:translateY(-12px);
 }
 
 }
+.plan{
 
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.table{
+
+background:#ddd;
+
+padding:20px;
+
+border-radius:15px;
+
+font-weight:bold;
+
+transition:.4s;
+
+}
+
+.selectionnee{
+
+background:#FFD700;
+
+color:#7a0000;
+
+box-shadow:0 0 20px gold;
+
+transform:scale(1.05);
+
+}
+  
 </style>
 
 </head>
@@ -186,6 +223,24 @@ Trouver ma place
 
 <div id="resultat"></div>
 
+<div id="planSalle" style="display:none; margin-top:25px;">
+
+<h2>🗺️ Plan de la salle</h2>
+
+<div class="plan">
+
+<div class="table" id="table1">Table 1</div>
+
+<div class="table" id="table2">Table 2</div>
+
+<div class="table" id="table3">Table 3</div>
+
+<div class="table" id="table4">Table 4</div>
+
+</div>
+
+</div>
+
 </div>
 
 <script>
@@ -213,6 +268,28 @@ const prenom = document.getElementById("prenom").value.trim();
 const resultat = document.getElementById("resultat");
 
 if(invites[prenom]){
+
+resultat.innerHTML=`
+<h2>🎉 Bienvenue ${prenom} !</h2>
+
+<p>🍽️ Table : <b>${invites[prenom].table}</b></p>
+
+<p>🪑 Place : <b>${invites[prenom].place}</b></p>
+`;
+
+document.getElementById("planSalle").style.display="block";
+
+document.querySelectorAll(".table").forEach(t=>{
+
+t.classList.remove("selectionnee");
+
+});
+
+document
+.getElementById("table"+invites[prenom].table)
+.classList.add("selectionnee");
+
+}
 
 resultat.innerHTML=`
 🎉 <br><br>
