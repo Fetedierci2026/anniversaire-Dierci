@@ -10,7 +10,7 @@
 
 body{
 
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+background:linear-gradient(135deg,#5a0000,#8b0000,#c00000);
 
 font-family:Arial,sans-serif;
 
@@ -44,7 +44,11 @@ width:350px;
 
 h1{
 
-color:#ff4d6d;
+color:#FFD700;
+
+text-shadow:0 0 10px gold;
+
+font-size:40px;
 
 }
 
@@ -68,25 +72,33 @@ button{
 
 margin-top:20px;
 
-padding:12px 30px;
+padding:15px 35px;
 
-font-size:18px;
+font-size:20px;
 
-background:#ff4d6d;
+background:#FFD700;
 
-color:white;
+color:#7a0000;
 
 border:none;
 
-border-radius:10px;
+border-radius:12px;
 
 cursor:pointer;
+
+font-weight:bold;
+
+box-shadow:0 0 20px gold;
+
+transition:.3s;
 
 }
 
 button:hover{
 
-background:#e6395f;
+transform:scale(1.08);
+
+box-shadow:0 0 40px gold;
 
 }
 
@@ -102,6 +114,31 @@ color:#444;
 
 }
 
+.ballon{
+
+font-size:80px;
+
+animation:tourner 5s linear infinite;
+
+margin-bottom:20px;
+
+}
+
+@keyframes tourner{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
 </style>
 
 </head>
@@ -110,8 +147,37 @@ color:#444;
 
 <div class="carte">
 
+<div class="ballon">⚽</div>
+
+<div class="trophee">🏆</div>
+
 <h1>🎂 Anniversaire de Dierci 🎉</h1>
 
+  .trophee{
+
+font-size:70px;
+
+margin-bottom:15px;
+
+animation:rebond 2s infinite;
+
+}
+
+@keyframes rebond{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
 <p>Entrez votre prénom pour trouver votre place.</p>
 
 <input id="prenom" placeholder="Votre prénom">
