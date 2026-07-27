@@ -127,15 +127,33 @@ margin-bottom:20px;
 @keyframes tourner{
 
 0%{
-
 transform:rotate(0deg);
-
 }
 
 100%{
-
 transform:rotate(360deg);
+}
 
+}
+
+.trophee{
+
+font-size:70px;
+
+margin-bottom:15px;
+
+animation:rebond 2s infinite;
+
+}
+
+@keyframes rebond{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
 }
 
 }
@@ -153,30 +171,6 @@ transform:rotate(360deg);
 <div class="trophee">🏆</div>
 
 <h1>🎂 Anniversaire de Dierci 🎉</h1>
-
-.trophee{
-
-font-size:70px;
-
-margin-bottom:15px;
-
-animation:rebond 2s infinite;
-
-}
-
-@keyframes rebond{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
 
 <p>Entrez votre prénom pour trouver votre place.</p>
 
