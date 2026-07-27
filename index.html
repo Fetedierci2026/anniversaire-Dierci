@@ -191,44 +191,29 @@ Trouver ma place
 <script>
 
 const invites = {
-
-"Papa": {table:1, place:1},
-
-"Maman": {table:1, place:2},
-
-"Dierci": {table:1, place:3},
-
-"Sarah": {table:2, place:1},
-
-"Kevin": {table:2, place:2},
-
-"Alex": {table:3, place:4}
-
+  "Papa": { table: 1, place: 1 },
+  "Maman": { table: 1, place: 2 },
+  "Sarah": { table: 2, place: 1 },
+  "Kevin": { table: 2, place: 2 }
 };
 
-function chercher(){
+function chercher() {
 
-const prenom = document.getElementById("prenom").value.trim();
+  const prenom = document.getElementById("prenom").value.trim();
+  const resultat = document.getElementById("resultat");
 
-const resultat = document.getElementById("resultat");
+  if (invites[prenom]) {
 
-if(invites[prenom]){
+    resultat.innerHTML =
+      "🎉 Bonjour <b>" + prenom + "</b><br><br>" +
+      "🍽️ Table : <b>" + invites[prenom].table + "</b><br><br>" +
+      "🪑 Place : <b>" + invites[prenom].place + "</b>";
 
-resultat.innerHTML=`
-🎉 <br><br>
+  } else {
 
-Bonjour <b>${prenom}</b> 👋<br><br>
+    resultat.innerHTML = "❌ Désolé, votre nom n'est pas dans la liste.";
 
-🍽️ Table : <b>${invites[prenom].table}</b><br><br>
-
-🪑 Place : <b>${invites[prenom].place}</b>
-`;
-
-}else{
-
-resultat.innerHTML="❌ Désolé, votre nom n'est pas dans la liste.";
-
-}
+  }
 
 }
 
