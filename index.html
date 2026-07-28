@@ -211,7 +211,9 @@ transform:scale(1.05);
 
 <p>Entrez votre prénom pour trouver votre place.</p>
 
-<input id="prenom" placeholder="Votre prénom">
+<input id="prenom" list="listeInvites" placeholder="Votre prénom">
+
+<datalist id="listeInvites"></datalist>
 
 <br>
 
@@ -252,7 +254,17 @@ const invites = {
   "Sarah": { table: 2, place: 1 },
   "Kevin": { table: 2, place: 2 },
   "Alex": { table: 3, place: 4 }
-};
+const liste = document.getElementById("listeInvites");
+
+Object.keys(invites).forEach(function(nom){
+
+    const option = document.createElement("option");
+
+    option.value = nom;
+
+    liste.appendChild(option);
+
+});
 
 function chercher(){
 
