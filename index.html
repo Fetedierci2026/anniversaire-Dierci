@@ -324,6 +324,108 @@ background:#eee;
 .succes{
     animation:succes 0.8s ease;
 }
+
+  /* GALERIE PHOTO */
+
+.galerie{
+
+display:none;
+
+margin-top:30px;
+
+background:#fff;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+.galerie h2{
+
+color:#7a0000;
+
+font-size:28px;
+
+}
+
+
+.grille-photos{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:12px;
+
+}
+
+
+.grille-photos img{
+
+width:100%;
+
+height:100px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.grille-photos img:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 20px gold;
+
+}
+
+
+/* PHOTO EN GRAND */
+
+.zoom{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:20;
+
+}
+
+
+.zoom img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:20px;
+
+}
   
 </style>
 
@@ -353,6 +455,12 @@ background:#eee;
 
 Trouver ma place
 
+  <div class="zoom" id="zoom" onclick="fermerPhoto()">
+
+<img id="photoZoom">
+
+</div>
+
 </button>
 
 <div id="resultat"></div>
@@ -377,6 +485,35 @@ Trouver ma place
 
 <div class="entree">🚪 ENTRÉE</div>
 
+  <button onclick="ouvrirGalerie()">
+
+📸 Galerie photo
+
+</button>
+
+
+<div class="galerie" id="galerie">
+
+<h2>📸 Souvenirs de Dierci</h2>
+
+<div class="grille-photos">
+
+<img src="photos/photo1.jpg">
+
+<img src="photos/photo2.jpg">
+
+<img src="photos/photo3.jpg">
+
+<img src="photos/photo4.jpg">
+
+<img src="photos/photo5.jpg">
+
+<img src="photos/photo6.jpg">
+
+</div>
+
+</div>
+  
 </div>
 
 </div>
@@ -482,6 +619,31 @@ setTimeout(function(){
 
 }
 
+ function ouvrirGalerie(){
+
+document.getElementById("galerie").style.display="block";
+
+}
+
+
+document.querySelectorAll(".grille-photos img").forEach(function(photo){
+
+photo.onclick=function(){
+
+document.getElementById("photoZoom").src=this.src;
+
+document.getElementById("zoom").style.display="flex";
+
+}
+
+});
+
+
+function fermerPhoto(){
+
+document.getElementById("zoom").style.display="none";
+
+}
   
 </script>
 
