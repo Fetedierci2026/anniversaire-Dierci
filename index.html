@@ -303,6 +303,27 @@ background:#eee;
     }
 
 }
+
+  @keyframes succes {
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+        box-shadow:0 0 35px gold;
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.succes{
+    animation:succes 0.8s ease;
+}
   
 </style>
 
@@ -418,8 +439,10 @@ function chercher(){
 
     const prenom = document.getElementById("prenom").value.trim();
 
-    const resultat = document.getElementById("resultat");
+  const resultat = document.getElementById("resultat");
 
+  const carte = document.querySelector(".carte");
+  
     if(invites[prenom]){
 
         resultat.innerHTML = `
@@ -429,9 +452,16 @@ function chercher(){
 
             <p>🪑 Place : <b>${invites[prenom].place}</b></p>
         `;
+ 
+      document.getElementById("planSalle").style.display = "block";
 
-        document.getElementById("planSalle").style.display = "block";
+      carte.classList.remove("succes");
 
+setTimeout(function(){
+
+    carte.classList.add("succes");
+
+},10);
         document.querySelectorAll(".table").forEach(function(table){
 
             table.classList.remove("selectionnee");
